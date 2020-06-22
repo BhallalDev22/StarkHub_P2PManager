@@ -3,44 +3,60 @@ package P2PManager;
 import java.sql.*;
 
 public class DatabaseHandler {
-    public static void main(String[] args) throws SQLException {
+    private static DatabaseHandler handler = null;
 
-        Connection myConn = null;
-        Statement myStmt = null;
-        ResultSet myRs = null;
+    private static Connection myConn = null;
+    private static Statement myStmt = null;
 
+    private static final String dbUrl = "jdbc:mysql://localhost:3306/StarkHub";
+    private static final String user = "Bhanu";
+    private static final String pass = "BhallalDev22";
+
+    private DatabaseHandler(){
+        createConnection();
+    }
+
+    public static DatabaseHandler getInstance() {
+        if (handler == null) {
+            handler = new DatabaseHandler();
+        }
+        return handler;
+    }
+
+    void createConnection() {
         try {
-            // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "Bhanu" , "BhallalDev22");
-
+            myConn = DriverManager.getConnection(dbUrl, user, pass);
             System.out.println("Database connection successful!\n");
+        } catch (Exception e) {
+            System.out.println("Database connection unsuccessful!\n");
+            e.printStackTrace();
+        }
+    }
 
-            // 2. Create a statement
+    public boolean execAction(String qu) {
+        try {
             myStmt = myConn.createStatement();
-
-            // 3. Execute SQL query
-            myRs = myStmt.executeQuery("select * from employees");
-
-            // 4. Process the result set
-            while (myRs.next()) {
-                System.out.println(myRs.getString("last_name") + ", " + myRs.getString("first_name"));
-            }
+            int rowsAffected = myStmt.executeUpdate(qu);
+            System.out.println("execAction query execution successful!\n");
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("execAction query execution unsuccessful!\n");
+            ex.printStackTrace();
+            return false;
         }
-        catch (Exception exc) {
-            exc.printStackTrace();
-        }
-        finally {
-            if (myRs != null) {
-                myRs.close();
-            }
+    }
 
-            if (myStmt != null) {
-                myStmt.close();
-            }
-
-            if (myConn != null) {
-                myConn.close();
-            }
+    public ResultSet execQuery(String qu) {
+        ResultSet myRs = null;
+        try {
+            myStmt = myConn.createStatement();
+            myRs = myStmt.executeQuery(qu);
+            System.out.println("execQuery query execution successful!\n");
+        } catch (SQLException ex) {
+            System.out.println("execQuery query execution unsuccessful!\n");
+            ex.printStackTrace();
+        }finally {
+            return myRs;
         }
     }
 }
