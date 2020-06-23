@@ -5,6 +5,11 @@ import java.net.ServerSocket;
 
 public class MainServer {
     public static void main(String[] args) {
+
+        new Thread(() -> {
+            DatabaseHandler.getInstance();
+        }).start();
+
         try(ServerSocket serverSocket = new ServerSocket(5000)) {
             while(true) {
                 new NewClient(serverSocket.accept()).start();
