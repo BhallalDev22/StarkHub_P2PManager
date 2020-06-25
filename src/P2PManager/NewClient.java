@@ -23,7 +23,6 @@ public class NewClient extends Thread{
 
             while(true) {
                 String sip = input.readLine();
-                System.out.println("Received client input: " + sip);
                 if(sip.equals("exit")) {
                     break;
                 }
