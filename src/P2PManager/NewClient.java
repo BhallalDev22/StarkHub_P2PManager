@@ -1,5 +1,8 @@
 package P2PManager;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,6 +12,7 @@ import java.net.Socket;
 public class NewClient extends Thread{
     private Socket socket;
     DatabaseHandler handler = DatabaseHandler.getInstance();
+    VaryingData vd = VaryingData.getInstance();
 
     public NewClient(Socket socket) {
         this.socket = socket;
@@ -21,11 +25,17 @@ public class NewClient extends Thread{
                     new InputStreamReader(socket.getInputStream()));
             PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
 
+            Gson gson = new GsonBuilder().serializeNulls().create();
+            String trendingVideos = gson.toJson(vd);
+            System.out.println(trendingVideos);
+            output.println(trendingVideos);
+
             while(true) {
                 String sip = input.readLine();
                 if(sip.equals("exit")) {
                     break;
                 }
+
                 output.println(sip);
             }
 

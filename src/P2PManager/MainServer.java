@@ -12,7 +12,7 @@ public class MainServer {
 
         new Thread(){
             public void run(){
-                String query = "SELECT TOP 9 VideoName UserName ChannelName VideoViews VideoPath FROM VideoList WHERE Status=1 ORDER BY ViewsDifference DESC";
+                String query = "SELECT VideoName, UserName, ChannelName, VideoViews, VideoPath FROM VideoList WHERE Status = 1 ORDER BY ViewsDifference DESC LIMIT 9;";
                 ResultSet rs;
 
                 while(true){
