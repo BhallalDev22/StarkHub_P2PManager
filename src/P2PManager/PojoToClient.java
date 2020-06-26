@@ -3,32 +3,28 @@ package P2PManager;
 import java.util.ArrayList;
 
 public class PojoToClient {
-    private String UserName;
-    private String EmailID;
-    private String Password;
-    private String IPAddress;
-    private int status;
-    private String AccountCreationTime;
-    private ArrayList<String> ChannelName = new ArrayList<String>();
-    private ArrayList<String> ChannelCreationTime = new ArrayList<String>();
-    private ArrayList<String> ChannelActiveTime = new ArrayList<String>();
-    private ArrayList<String> VideoName = new ArrayList<String>();
-    private ArrayList<String> VideoTag = new ArrayList<String>();
-    private ArrayList<String> VideoViews = new ArrayList<String>();
-    private int VideoLikes;
-    private int VideoDislikes;
-    private ArrayList<String> VideoCreationTime = new ArrayList<String>();
-    private ArrayList<String> Comment = new ArrayList<String>();
-    private ArrayList<String> CommentTime = new ArrayList<String>();
-    private ArrayList<String> CommentLikes = new ArrayList<String>();
-    private ArrayList<String> CommentDislikes = new ArrayList<String>();
-    private ArrayList<String> SubscribeTime = new ArrayList<String>();
-    private ArrayList<String> WatchLaterTime = new ArrayList<String>();
-    private ArrayList<String> WatchTime = new ArrayList<String>();
-    private ArrayList<String> ChannelRating = new ArrayList<String>();
-    private ArrayList<String> NumberOfSubscribers = new ArrayList<String>();
-    private ArrayList<String> NumberOfVideos = new ArrayList<String>();
-    private int NumberOfComments;
+    public String UserName;
+    public String EmailID;
+    public String AccountCreationTime;
+    public ArrayList<String> ChannelName = new ArrayList<String>();
+    public ArrayList<String> ChannelCreationTime = new ArrayList<String>();
+    public ArrayList<String> VideoName = new ArrayList<String>();
+    public ArrayList<String> VideoTag = new ArrayList<String>();
+    public ArrayList<String> VideoViews = new ArrayList<String>();
+    public ArrayList<String> VideoLikes = new ArrayList<String>();
+    public ArrayList<String> VideoDislikes = new ArrayList<String>();
+    public ArrayList<String> VideoCreationTime = new ArrayList<String>();
+    public ArrayList<String> Comment = new ArrayList<String>();
+    public ArrayList<String> CommentTime = new ArrayList<String>();
+    public ArrayList<String> CommentLikes = new ArrayList<String>();
+    public ArrayList<String> CommentDislikes = new ArrayList<String>();
+    public ArrayList<String> SubscribeTime = new ArrayList<String>();
+    public ArrayList<String> WatchLaterTime = new ArrayList<String>();
+    public ArrayList<String> WatchTime = new ArrayList<String>();
+    public ArrayList<String> ChannelRating = new ArrayList<String>();
+    public ArrayList<String> NumberOfSubscribers = new ArrayList<String>();
+    public ArrayList<String> NumberOfVideos = new ArrayList<String>();
+    public ArrayList<String> NumberOfComments = new ArrayList<String>();
 
     public String getUserName() {
         return UserName;
@@ -44,30 +40,6 @@ public class PojoToClient {
 
     public void setEmailID(String emailID) {
         EmailID = emailID;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public String getIPAddress() {
-        return IPAddress;
-    }
-
-    public void setIPAddress(String IPAddress) {
-        this.IPAddress = IPAddress;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
     public String getAccountCreationTime() {
@@ -94,14 +66,6 @@ public class PojoToClient {
         ChannelCreationTime = channelCreationTime;
     }
 
-    public ArrayList<String> getChannelActiveTime() {
-        return ChannelActiveTime;
-    }
-
-    public void setChannelActiveTime(ArrayList<String> channelActiveTime) {
-        ChannelActiveTime = channelActiveTime;
-    }
-
     public ArrayList<String> getVideoName() {
         return VideoName;
     }
@@ -126,19 +90,19 @@ public class PojoToClient {
         VideoViews = videoViews;
     }
 
-    public int getVideoLikes() {
+    public ArrayList<String> getVideoLikes() {
         return VideoLikes;
     }
 
-    public void setVideoLikes(int videoLikes) {
+    public void setVideoLikes(ArrayList<String> videoLikes) {
         VideoLikes = videoLikes;
     }
 
-    public int getVideoDislikes() {
+    public ArrayList<String> getVideoDislikes() {
         return VideoDislikes;
     }
 
-    public void setVideoDislikes(int videoDislikes) {
+    public void setVideoDislikes(ArrayList<String> videoDislikes) {
         VideoDislikes = videoDislikes;
     }
 
@@ -230,11 +194,11 @@ public class PojoToClient {
         NumberOfVideos = numberOfVideos;
     }
 
-    public int getNumberOfComments() {
+    public ArrayList<String> getNumberOfComments() {
         return NumberOfComments;
     }
 
-    public void setNumberOfComments(int numberOfComments) {
+    public void setNumberOfComments(ArrayList<String> numberOfComments) {
         NumberOfComments = numberOfComments;
     }
 }
