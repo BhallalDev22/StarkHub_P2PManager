@@ -20,17 +20,21 @@ public class Notifications {
                 ptc.ChannelName.add(rs.getString("ChannelName"));
                 ptc.VideoName.add(rs.getString("VideoName"));
             }
+
+            Gson gson = new GsonBuilder().serializeNulls().create();
+            String notificationsList = gson.toJson(ptc);
+
             System.out.println("Notifications ready to be sent\n");
+
             db.execAction(qu2);
             System.out.println("Notifications reseted for the user successfully\n");
+
+            return notificationsList;
+
         }catch (Exception e){
             System.out.println("Notifications update unsuccessful\n");
             e.printStackTrace();
+            return "Unsuccessful";
         }
-
-        Gson gson = new GsonBuilder().serializeNulls().create();
-        String notificationsList = gson.toJson(ptc);
-
-        return notificationsList;
     }
 }

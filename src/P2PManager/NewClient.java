@@ -27,8 +27,9 @@ public class NewClient extends Thread{
 
             Gson gson = new GsonBuilder().serializeNulls().create();
             String trendingVideos = gson.toJson(vd);
-            System.out.println(trendingVideos);
+
             output.println(trendingVideos);
+            System.out.println("Trending videos sent successful\n");
 
             while(true) {
                 String sip = input.readLine();

@@ -33,12 +33,12 @@ public class Login {
                 return notificatiosList;
             }
             else {
-                return "Login unsuccessful";
+                return "Unsuccessful";
             }
         }catch(Exception e){
             System.out.println("Login password fetch unsuccessfull\n");
             e.printStackTrace();
-            return "Login unsuccessfull";
+            return "Unsuccessful";
         }
     }
 }
