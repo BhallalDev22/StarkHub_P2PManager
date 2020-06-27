@@ -15,7 +15,7 @@ public class PojoToClient {
     public ArrayList<Integer> VideoDislikes = new ArrayList<Integer>();
     public ArrayList<String> VideoCreationTime = new ArrayList<String>();
     public ArrayList<String> Comment = new ArrayList<String>();
-    public ArrayList<String> CommentTime = new ArrayList<String>();
+    public ArrayList<String> CommentCreationTime = new ArrayList<String>();
     public ArrayList<Integer> CommentLikes = new ArrayList<Integer>();
     public ArrayList<Integer> CommentDislikes = new ArrayList<Integer>();
     public ArrayList<String> SubscribeTime = new ArrayList<String>();
@@ -122,12 +122,12 @@ public class PojoToClient {
         Comment = comment;
     }
 
-    public ArrayList<String> getCommentTime() {
-        return CommentTime;
+    public ArrayList<String> getCommentCreationTime() {
+        return CommentCreationTime;
     }
 
-    public void setCommentTime(ArrayList<String> commentTime) {
-        CommentTime = commentTime;
+    public void setCommentCreationTime(ArrayList<String> commentCreationTime) {
+        CommentCreationTime = commentCreationTime;
     }
 
     public ArrayList<Integer> getCommentLikes() {
