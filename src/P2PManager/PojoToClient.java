@@ -10,21 +10,21 @@ public class PojoToClient {
     public ArrayList<String> ChannelCreationTime = new ArrayList<String>();
     public ArrayList<String> VideoName = new ArrayList<String>();
     public ArrayList<String> VideoTag = new ArrayList<String>();
-    public ArrayList<String> VideoViews = new ArrayList<String>();
-    public ArrayList<String> VideoLikes = new ArrayList<String>();
-    public ArrayList<String> VideoDislikes = new ArrayList<String>();
+    public ArrayList<Integer> VideoViews = new ArrayList<Integer>();
+    public ArrayList<Integer> VideoLikes = new ArrayList<Integer>();
+    public ArrayList<Integer> VideoDislikes = new ArrayList<Integer>();
     public ArrayList<String> VideoCreationTime = new ArrayList<String>();
     public ArrayList<String> Comment = new ArrayList<String>();
     public ArrayList<String> CommentTime = new ArrayList<String>();
-    public ArrayList<String> CommentLikes = new ArrayList<String>();
-    public ArrayList<String> CommentDislikes = new ArrayList<String>();
+    public ArrayList<Integer> CommentLikes = new ArrayList<Integer>();
+    public ArrayList<Integer> CommentDislikes = new ArrayList<Integer>();
     public ArrayList<String> SubscribeTime = new ArrayList<String>();
     public ArrayList<String> WatchLaterTime = new ArrayList<String>();
     public ArrayList<String> WatchTime = new ArrayList<String>();
     public ArrayList<String> ChannelRating = new ArrayList<String>();
-    public ArrayList<String> NumberOfSubscribers = new ArrayList<String>();
-    public ArrayList<String> NumberOfVideos = new ArrayList<String>();
-    public ArrayList<String> NumberOfComments = new ArrayList<String>();
+    public ArrayList<Integer> NumberOfSubscribers = new ArrayList<Integer>();
+    public ArrayList<Integer> NumberOfVideos = new ArrayList<Integer>();
+    public ArrayList<Integer> NumberOfComments = new ArrayList<Integer>();
 
     public String getUserName() {
         return UserName;
@@ -82,27 +82,27 @@ public class PojoToClient {
         VideoTag = videoTag;
     }
 
-    public ArrayList<String> getVideoViews() {
+    public ArrayList<Integer> getVideoViews() {
         return VideoViews;
     }
 
-    public void setVideoViews(ArrayList<String> videoViews) {
+    public void setVideoViews(ArrayList<Integer> videoViews) {
         VideoViews = videoViews;
     }
 
-    public ArrayList<String> getVideoLikes() {
+    public ArrayList<Integer> getVideoLikes() {
         return VideoLikes;
     }
 
-    public void setVideoLikes(ArrayList<String> videoLikes) {
+    public void setVideoLikes(ArrayList<Integer> videoLikes) {
         VideoLikes = videoLikes;
     }
 
-    public ArrayList<String> getVideoDislikes() {
+    public ArrayList<Integer> getVideoDislikes() {
         return VideoDislikes;
     }
 
-    public void setVideoDislikes(ArrayList<String> videoDislikes) {
+    public void setVideoDislikes(ArrayList<Integer> videoDislikes) {
         VideoDislikes = videoDislikes;
     }
 
@@ -130,19 +130,19 @@ public class PojoToClient {
         CommentTime = commentTime;
     }
 
-    public ArrayList<String> getCommentLikes() {
+    public ArrayList<Integer> getCommentLikes() {
         return CommentLikes;
     }
 
-    public void setCommentLikes(ArrayList<String> commentLikes) {
+    public void setCommentLikes(ArrayList<Integer> commentLikes) {
         CommentLikes = commentLikes;
     }
 
-    public ArrayList<String> getCommentDislikes() {
+    public ArrayList<Integer> getCommentDislikes() {
         return CommentDislikes;
     }
 
-    public void setCommentDislikes(ArrayList<String> commentDislikes) {
+    public void setCommentDislikes(ArrayList<Integer> commentDislikes) {
         CommentDislikes = commentDislikes;
     }
 
@@ -178,27 +178,27 @@ public class PojoToClient {
         ChannelRating = channelRating;
     }
 
-    public ArrayList<String> getNumberOfSubscribers() {
+    public ArrayList<Integer> getNumberOfSubscribers() {
         return NumberOfSubscribers;
     }
 
-    public void setNumberOfSubscribers(ArrayList<String> numberOfSubscribers) {
+    public void setNumberOfSubscribers(ArrayList<Integer> numberOfSubscribers) {
         NumberOfSubscribers = numberOfSubscribers;
     }
 
-    public ArrayList<String> getNumberOfVideos() {
+    public ArrayList<Integer> getNumberOfVideos() {
         return NumberOfVideos;
     }
 
-    public void setNumberOfVideos(ArrayList<String> numberOfVideos) {
+    public void setNumberOfVideos(ArrayList<Integer> numberOfVideos) {
         NumberOfVideos = numberOfVideos;
     }
 
-    public ArrayList<String> getNumberOfComments() {
+    public ArrayList<Integer> getNumberOfComments() {
         return NumberOfComments;
     }
 
-    public void setNumberOfComments(ArrayList<String> numberOfComments) {
+    public void setNumberOfComments(ArrayList<Integer> numberOfComments) {
         NumberOfComments = numberOfComments;
     }
 }

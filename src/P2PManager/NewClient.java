@@ -13,6 +13,7 @@ public class NewClient extends Thread{
     private Socket socket;
     DatabaseHandler handler = DatabaseHandler.getInstance();
     VaryingData vd = VaryingData.getInstance();
+    String CurrentUserName = null;
 
     public NewClient(Socket socket) {
         this.socket = socket;
