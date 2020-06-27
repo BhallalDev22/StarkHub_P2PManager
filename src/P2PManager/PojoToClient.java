@@ -6,6 +6,7 @@ public class PojoToClient {
     public String UserName;
     public String EmailID;
     public String AccountCreationTime;
+    public String IPAddress;
     public ArrayList<String> ChannelName = new ArrayList<String>();
     public ArrayList<String> ChannelCreationTime = new ArrayList<String>();
     public ArrayList<String> VideoName = new ArrayList<String>();
@@ -14,17 +15,18 @@ public class PojoToClient {
     public ArrayList<Integer> VideoLikes = new ArrayList<Integer>();
     public ArrayList<Integer> VideoDislikes = new ArrayList<Integer>();
     public ArrayList<String> VideoCreationTime = new ArrayList<String>();
+    public ArrayList<String> VideoPath = new ArrayList<String>();
     public ArrayList<String> Comment = new ArrayList<String>();
+    public ArrayList<String> CommentUserName = new ArrayList<String>();
     public ArrayList<String> CommentCreationTime = new ArrayList<String>();
-    public ArrayList<Integer> CommentLikes = new ArrayList<Integer>();
-    public ArrayList<Integer> CommentDislikes = new ArrayList<Integer>();
     public ArrayList<String> SubscribeTime = new ArrayList<String>();
     public ArrayList<String> WatchLaterTime = new ArrayList<String>();
     public ArrayList<String> WatchTime = new ArrayList<String>();
-    public ArrayList<String> ChannelRating = new ArrayList<String>();
     public ArrayList<Integer> NumberOfSubscribers = new ArrayList<Integer>();
     public ArrayList<Integer> NumberOfVideos = new ArrayList<Integer>();
     public ArrayList<Integer> NumberOfComments = new ArrayList<Integer>();
+    public int IsSubscribed;
+    public int IsWatchLater;
 
     public String getUserName() {
         return UserName;
@@ -130,26 +132,6 @@ public class PojoToClient {
         CommentCreationTime = commentCreationTime;
     }
 
-    public ArrayList<Integer> getCommentLikes() {
-        return CommentLikes;
-    }
-
-    public void setCommentLikes(ArrayList<Integer> commentLikes) {
-        CommentLikes = commentLikes;
-    }
-
-    public ArrayList<Integer> getCommentDislikes() {
-        return CommentDislikes;
-    }
-
-    public void setCommentDislikes(ArrayList<Integer> commentDislikes) {
-        CommentDislikes = commentDislikes;
-    }
-
-    public ArrayList<String> getSubscribeTime() {
-        return SubscribeTime;
-    }
-
     public void setSubscribeTime(ArrayList<String> subscribeTime) {
         SubscribeTime = subscribeTime;
     }
@@ -168,14 +150,6 @@ public class PojoToClient {
 
     public void setWatchTime(ArrayList<String> watchTime) {
         WatchTime = watchTime;
-    }
-
-    public ArrayList<String> getChannelRating() {
-        return ChannelRating;
-    }
-
-    public void setChannelRating(ArrayList<String> channelRating) {
-        ChannelRating = channelRating;
     }
 
     public ArrayList<Integer> getNumberOfSubscribers() {
@@ -200,5 +174,49 @@ public class PojoToClient {
 
     public void setNumberOfComments(ArrayList<Integer> numberOfComments) {
         NumberOfComments = numberOfComments;
+    }
+
+    public int getIsSubscribed() {
+        return IsSubscribed;
+    }
+
+    public void setIsSubscribed(int isSubscribed) {
+        IsSubscribed = isSubscribed;
+    }
+
+    public int getIsWatchLater() {
+        return IsWatchLater;
+    }
+
+    public void setIsWatchLater(int isWatchLater) {
+        IsWatchLater = isWatchLater;
+    }
+
+    public ArrayList<String> getVideoPath() {
+        return VideoPath;
+    }
+
+    public void setVideoPath(ArrayList<String> videoPath) {
+        VideoPath = videoPath;
+    }
+
+    public ArrayList<String> getSubscribeTime() {
+        return SubscribeTime;
+    }
+
+    public ArrayList<String> getCommentUserName() {
+        return CommentUserName;
+    }
+
+    public void setCommentUserName(ArrayList<String> commentUserName) {
+        CommentUserName = commentUserName;
+    }
+
+    public String getIPAddress() {
+        return IPAddress;
+    }
+
+    public void setIPAddress(String IPAddress) {
+        this.IPAddress = IPAddress;
     }
 }

@@ -9,6 +9,9 @@ public class Signup {
         try{
             db.execAction(qu);
             System.out.println("Signup action successful\n");
+
+            CurrentlyViewingList.newEntry();
+
             return "Successful";
         }catch (Exception e){
             System.out.println("Signup action unsuccessful\n");

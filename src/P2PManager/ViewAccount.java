@@ -15,6 +15,7 @@ public class ViewAccount {
 
         String qu = "SELECT UserName, EmailID, AccountCreationDate FROM LoginCredentials WHERE UserName = '" + UserName + "';";
 
+
         try {
             rs = db.execQuery(qu);
             while (rs.next()){
