@@ -3,15 +3,11 @@ package P2PManager;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
 import java.sql.ResultSet;
 
 public class PlayVideo {
 
-    public static String query(String VideoName, String UserName, Socket socket){
+    public static String query(String VideoName, String UserName){
         DatabaseHandler db = DatabaseHandler.getInstance();
         PojoToClient ptc = new PojoToClient();
         ResultSet rs = null;
@@ -27,9 +23,9 @@ public class PlayVideo {
 
         try {
 
-            BufferedReader input = new BufferedReader(
+            /*BufferedReader input = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
-            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);*/
 
             db.execAction(qu2);
 
@@ -97,7 +93,7 @@ public class PlayVideo {
 
             System.out.println("Complete video detail package ready to be sent\n");
 
-            userID-=1;
+            /*userID-=1;
 
             CurrentlyViewingList.currentlyViewing.get(userID).add(socket);
 
@@ -114,7 +110,8 @@ public class PlayVideo {
                 }
 
                 output.println(sip);
-            }
+            }*/
+            return videoDetails;
 
         }catch (Exception e){
             System.out.println("Details to play video fetch and update failed\n");
