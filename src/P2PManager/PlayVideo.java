@@ -67,7 +67,7 @@ public class PlayVideo {
 
             System.out.println("WatchHistory updated successfully\n");
 
-            String qu6 = "SELECT SubscriberID FROM SubscriberList WHERE ChannelName = '" + cn + "', UserName = '" + UserName + "';";
+            String qu6 = "SELECT SubscriberID FROM SubscriberList WHERE ChannelName = '" + cn + "' AND UserName = '" + UserName + "';";
             rs = db.execQuery(qu6);
             while (rs.next()){
                 isSubscriber = 1;

@@ -13,7 +13,7 @@ public class CommentHistory {
         PojoToClient ptc = new PojoToClient();
         ResultSet rs = null;
 
-        String qu = "SELECT VideoName, ChannelName, Comment, CommentLikes, CommentDislikes, CommentCreationTime FROM CommentList WHERE UserName = '" + UserName + "';";
+        String qu = "SELECT VideoName, ChannelName, Comment, CommentCreationTime FROM CommentList WHERE UserName = '" + UserName + "';";
 
         try {
             rs = db.execQuery(qu);
@@ -21,8 +21,6 @@ public class CommentHistory {
                 ptc.VideoName.add(rs.getString("VideoName"));
                 ptc.ChannelName.add(rs.getString("ChannelName"));
                 ptc.Comment.add(rs.getString("Comment"));
-                ptc.CommentLikes.add(rs.getInt("CommentLikes"));
-                ptc.CommentDislikes.add(rs.getInt("CommentDislikes"));
                 ptc.ChannelCreationTime.add(rs.getString("CommentCreationTime"));
             }
 
