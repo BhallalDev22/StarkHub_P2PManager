@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class PojoToClient {
     public String UserName;
+    public int UserID;
     public String EmailID;
     public String AccountCreationTime;
     public String IPAddress;
@@ -27,6 +28,14 @@ public class PojoToClient {
     public ArrayList<Integer> NumberOfComments = new ArrayList<Integer>();
     public int IsSubscribed;
     public int IsWatchLater;
+
+    public int getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(int userID) {
+        UserID = userID;
+    }
 
     public String getUserName() {
         return UserName;

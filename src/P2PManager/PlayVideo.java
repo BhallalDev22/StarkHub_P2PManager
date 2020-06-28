@@ -3,6 +3,9 @@ package P2PManager;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.ResultSet;
 
@@ -23,6 +26,11 @@ public class PlayVideo {
         String qu4 = "SELECT UserName, Comment, CommentCreationTime FROM CommentList WHERE VideoName = '" + VideoName + "';";
 
         try {
+
+            BufferedReader input = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream()));
+            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+
             db.execAction(qu2);
 
             System.out.println("Views updated successfully\n");
@@ -49,6 +57,7 @@ public class PlayVideo {
             while (rs.next()){
                 ptc.IPAddress = rs.getString("IPAddress");
                 userID = rs.getInt("UserID");
+                ptc.UserID = userID;
             }
 
             System.out.println("Ipaddress fetch successful\n");
@@ -94,12 +103,25 @@ public class PlayVideo {
 
             System.out.println("Video added to currently viewing list\n");
 
-            return videoDetails;
+            output.println(videoDetails);
+
+            while(true) {
+                String sip = input.readLine();
+                if(sip.equals("exit")) {
+                    CurrentlyViewingList.currentlyViewing.get(userID-1).remove(socket);
+                    System.out.println("User successfully removed from currently viewing list\n");
+                    return "Successful";
+                }
+
+                output.println(sip);
+            }
 
         }catch (Exception e){
+            System.out.println("Details to play video fetch and update failed\n");
             e.printStackTrace();
             return "Unsuccessful";
         }
+
     }
 
 }
