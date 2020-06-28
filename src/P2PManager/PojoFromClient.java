@@ -1,16 +1,16 @@
 package P2PManager;
 
 public class PojoFromClient {
-    private int header;
-    private String UserName;
-    private String EmailID;
-    private String Password;
-    private String IPAddress;
-    private String ChannelName;
-    private String VideoName;
-    private String VideoTag;
-    private String Comment;
-    private String VideoPath;
+    public int header;
+    public String UserName;
+    public String EmailID;
+    public String Password;
+    public String IPAddress;
+    public String ChannelName;
+    public String VideoName;
+    public String VideoTag;
+    public String Comment;
+    public String VideoPath;
 
     public int getHeader() {
         return header;
