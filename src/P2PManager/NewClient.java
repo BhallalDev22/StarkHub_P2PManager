@@ -305,6 +305,18 @@ public class NewClient extends Thread{
                         output.println(usf);
                     }
                 }
+                else if(pfc.header == 23)
+                {
+                    String xyz = DeleteVideo.query(pfc.ChannelName, pfc.VideoName);
+                    if(xyz != usf)
+                    {
+                        output.println(xyz);
+                    }
+                    else
+                    {
+                        output.println(usf);
+                    }
+                }
 
             }
 
