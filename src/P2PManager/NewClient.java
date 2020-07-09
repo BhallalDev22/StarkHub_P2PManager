@@ -36,9 +36,6 @@ public class NewClient extends Thread{
 
             while(true) {
                 String sip = input.readLine();
-                if(sip.equals("exit")) {
-                    break;
-                }
 
                 PojoFromClient pfc = gson.fromJson(sip, PojoFromClient.class);
 
@@ -293,6 +290,7 @@ public class NewClient extends Thread{
                     {
                         output.println(usf);
                     }
+                    break;
                 }
                 else if(pfc.header == 22)
                 {
@@ -318,7 +316,6 @@ public class NewClient extends Thread{
                         output.println(usf);
                     }
                 }
-
             }
 
         } catch(IOException e) {
