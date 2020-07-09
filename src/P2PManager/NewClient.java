@@ -283,6 +283,7 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 21)
                 {
+//                    System.out.println(pfc.UserName);
                     String xyz = MainExit.query(pfc.UserName);
                     if(xyz != usf)
                     {

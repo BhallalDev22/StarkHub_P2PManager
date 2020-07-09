@@ -3,9 +3,10 @@ package P2PManager;
 public class MainExit {
 
     public static String query(String UserName){
+//        System.out.println(UserName+"!");
         DatabaseHandler db = DatabaseHandler.getInstance();
 
-        String qu = "LoginCredentials SET Status = 0 WHERE UserName = '" + UserName + "';";
+        String qu = "UPDATE LoginCredentials SET Status = 0 WHERE UserName = '" + UserName + "';";
         String qu2 = "UPDATE VideoList SET Status = 0 WHERE UserName = '" + UserName + "';";
 
         try {
