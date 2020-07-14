@@ -15,11 +15,13 @@ public class PlayVideo {
         String un = null;
         int isSubscriber = 0;
         int isWatchLater = 0;
+        int likedDislikedStatus = 0;
         int userID = 0;
 
         String qu = "SELECT VideoName, ChannelName, VideoLikes, VideoDislikes, VideoViews, VideoCreationTime, NumberOfComments, VideoPath, UserName, VideoTag FROM VideoList WHERE VideoName = '" + VideoName + "';";
         String qu2 = "UPDATE VideoList SET VideoViews = VideoViews + 1, CurrentViews = CurrentViews + 1 WHERE VideoName = '" + VideoName + "';";
         String qu4 = "SELECT UserName, Comment, CommentCreationTime FROM CommentList WHERE VideoName = '" + VideoName + "';";
+        String qu8 = "SELECT Status FROM LikesDislikesList WHERE UserName = '" + UserName + "' AND VideoName = '" + VideoName + "';";
 
         try {
 
@@ -69,6 +71,13 @@ public class PlayVideo {
                 isSubscriber = 1;
             }
 
+            if(isSubscriber == 1){
+                ptc.IsSubscribed = 1;
+            }
+            else {
+                ptc.IsSubscribed = 0;
+            }
+
             System.out.println("Is subscriber checked successfully\n");
 
             String qu7 = "SELECT WatchLaterID FROM WatchLaterList WHERE VideoName = '" + VideoName + "';";
@@ -77,7 +86,28 @@ public class PlayVideo {
                 isWatchLater = 1;
             }
 
+            if(isWatchLater == 1){
+                ptc.IsWatchLater = 1;
+            }
+            else{
+                ptc.IsWatchLater = 0;
+            }
+
             System.out.println("Is watch later checked successfully\n");
+
+            rs=db.execQuery(qu8);
+            while (rs.next()){
+                likedDislikedStatus = rs.getInt("Status");
+            }
+
+            if(likedDislikedStatus == 0){
+                ptc.LikedDislikedStatus = 0;
+            }
+            else{
+                ptc.LikedDislikedStatus = likedDislikedStatus;
+            }
+
+            System.out.println("Is liked/disliked status checked successfully\n");
 
             rs = db.execQuery(qu4);
             while (rs.next()){

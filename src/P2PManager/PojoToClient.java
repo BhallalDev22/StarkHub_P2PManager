@@ -28,6 +28,15 @@ public class PojoToClient {
     public ArrayList<Integer> NumberOfComments = new ArrayList<Integer>();
     public int IsSubscribed;
     public int IsWatchLater;
+    public int LikedDislikedStatus;
+
+    public int getLikedDislikedStatus() {
+        return LikedDislikedStatus;
+    }
+
+    public void setLikedDislikedStatus(int likedDislikedStatus) {
+        LikedDislikedStatus = likedDislikedStatus;
+    }
 
     public int getUserID() {
         return UserID;

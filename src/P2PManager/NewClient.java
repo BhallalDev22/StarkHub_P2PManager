@@ -316,6 +316,30 @@ public class NewClient extends Thread{
                         output.println(usf);
                     }
                 }
+                else if(pfc.header == 24)
+                {
+                    String xyz = RemoveLike.query(pfc.UserName, pfc.VideoName);
+                    if(xyz != usf)
+                    {
+                        output.println(xyz);
+                    }
+                    else
+                    {
+                        output.println(usf);
+                    }
+                }
+                else if(pfc.header == 25)
+                {
+                    String xyz = RemoveDislike.query(pfc.UserName, pfc.VideoName);
+                    if(xyz != usf)
+                    {
+                        output.println(xyz);
+                    }
+                    else
+                    {
+                        output.println(usf);
+                    }
+                }
             }
 
         } catch(IOException e) {
