@@ -196,7 +196,7 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 14)
                 {
-                    String xyz = LikeVideo.query(pfc.VideoName);
+                    String xyz = LikeVideo.query(pfc.UserName, pfc.VideoName);
                     if(xyz != usf)
                     {
                         output.println(xyz);
@@ -208,7 +208,7 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 15)
                 {
-                    String xyz = DislikeVideo.query(pfc.VideoName);
+                    String xyz = DislikeVideo.query(pfc.UserName, pfc.VideoName);
                     if(xyz != usf)
                     {
                         output.println(xyz);
