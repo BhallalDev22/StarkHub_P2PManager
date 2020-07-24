@@ -21,7 +21,7 @@ public class ViewAccount {
             while (rs.next()){
                 ptc.UserName = rs.getString("UserName");
                 ptc.EmailID = rs.getString("EmailID");
-                ptc.AccountCreationTime = rs.getString("AccountCreationTime");
+                ptc.AccountCreationTime = rs.getString("AccountCreationDate");
             }
 
             System.out.println("Account details fetch successful\n");

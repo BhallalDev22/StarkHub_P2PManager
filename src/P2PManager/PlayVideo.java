@@ -113,7 +113,7 @@ public class PlayVideo {
             while (rs.next()){
                 ptc.CommentUserName.add(rs.getString("UserName"));
                 ptc.Comment.add(rs.getString("Comment"));
-                ptc.ChannelCreationTime.add(rs.getString("CommentCreationTime"));
+                ptc.CommentCreationTime.add(rs.getString("CommentCreationTime"));
             }
 
             System.out.println("Video comments fetched successfully\n");

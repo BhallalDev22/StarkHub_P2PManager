@@ -35,6 +35,7 @@ public class NewClient extends Thread{
             System.out.println("Trending videos sent successful\n");
 
             while(true) {
+                System.out.println("Waiting for query...");
                 String sip = input.readLine();
 
                 PojoFromClient pfc = gson.fromJson(sip, PojoFromClient.class);
@@ -112,7 +113,9 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 7)
                 {
-                    String xyz = ViewChannel.query(pfc.ChannelName);
+                    String xyz;
+                    xyz = ViewChannel.query(pfc.ChannelName);
+
                     if(xyz != usf)
                     {
                         output.println(xyz);
@@ -124,7 +127,9 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 8)
                 {
-                    String xyz = ViewChannelVideos.query(pfc.ChannelName);
+                    String xyz;
+                    xyz = ViewChannelVideos.query(pfc.ChannelName);
+
                     if(xyz != usf)
                     {
                         output.println(xyz);
@@ -136,7 +141,7 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 9)
                 {
-                    String xyz = CreateChannel.query(pfc.UserName, pfc.ChannelName);
+                    String xyz = CreateChannel.query(pfc.UserName, pfc.Password, pfc.ChannelName);
                     if(xyz != usf)
                     {
                         output.println(xyz);
@@ -220,7 +225,7 @@ public class NewClient extends Thread{
                 }
                 else if(pfc.header == 16)
                 {
-                    String xyz = WriteComment.query(pfc.VideoName, pfc.UserName, pfc.Comment);
+                    String xyz = WriteComment.query(pfc.VideoName, pfc.UserName, pfc.Comment,pfc.ChannelName);
                     if(xyz != usf)
                     {
                         output.println(xyz);

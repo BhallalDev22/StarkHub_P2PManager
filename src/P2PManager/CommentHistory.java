@@ -21,7 +21,7 @@ public class CommentHistory {
                 ptc.VideoName.add(rs.getString("VideoName"));
                 ptc.ChannelName.add(rs.getString("ChannelName"));
                 ptc.Comment.add(rs.getString("Comment"));
-                ptc.ChannelCreationTime.add(rs.getString("CommentCreationTime"));
+                ptc.CommentCreationTime.add(rs.getString("CommentCreationTime"));
             }
 
             System.out.println("Comment history successfully prepared\n");

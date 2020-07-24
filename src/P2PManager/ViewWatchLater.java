@@ -13,7 +13,7 @@ public class ViewWatchLater {
         PojoToClient ptc = new PojoToClient();
         ResultSet rs = null;
 
-        String qu = "SELECT VideoName, ChannelName, WatchLaterTime FROM WatchLaterList WHERE UserName = '" + UserName + "';";
+        String qu = "SELECT VideoName, ChannelName, WatchLaterTime FROM WatchLaterList WHERE UserName = '" + UserName + "' ORDER BY WatchLaterTime DESC;";
 
         try {
             rs = db.execQuery(qu);

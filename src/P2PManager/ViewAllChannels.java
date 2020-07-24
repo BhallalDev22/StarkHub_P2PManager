@@ -20,17 +20,17 @@ public class ViewAllChannels {
                 ptc.ChannelName.add(rs.getString("ChannelName"));
                 ptc.NumberOfSubscribers.add(rs.getInt("NumberOfSubscribers"));
             }
-            System.out.println("User channerl list prepared\n");
+            System.out.println("User channel list prepared\n");
 
             Gson gson = new GsonBuilder().serializeNulls().create();
             String userChannelList = gson.toJson(ptc);
 
-            System.out.println("User channerl list ready to be sent\n");
+            System.out.println("User channel list ready to be sent\n");
 
             return userChannelList;
 
         }catch (Exception e){
-            System.out.println("User channerl list fetch unsuccessful\n");
+            System.out.println("User channel list fetch unsuccessful\n");
             e.printStackTrace();
             return "Unsuccessful";
         }

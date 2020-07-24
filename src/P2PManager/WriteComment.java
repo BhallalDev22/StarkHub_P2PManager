@@ -2,11 +2,11 @@ package P2PManager;
 
 public class WriteComment {
 
-    public static String query(String VideoName, String UserName, String Comment){
+    public static String query(String VideoName, String UserName, String Comment, String ChannelName){
 
         DatabaseHandler db = DatabaseHandler.getInstance();
 
-        String qu = "INSERT INTO CommentList (VideoName, UserName, Comment) VALUES ('" + VideoName + "', '" + UserName + "', '" + Comment + "');";
+        String qu = "INSERT INTO CommentList (VideoName, UserName, Comment , ChannelName) VALUES ('" + VideoName + "', '" + UserName + "', '" + Comment + "', '" + ChannelName + "');";
 
         try{
             db.execAction(qu);

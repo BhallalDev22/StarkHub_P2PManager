@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `StarkHub` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `StarkHub` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `StarkHub`;
 -- MySQL dump 10.13  Distrib 8.0.20, for Linux (x86_64)
 --
@@ -32,7 +32,7 @@ CREATE TABLE `ChannelList` (
   `NumberOfSubscribers` int unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ChannelName`),
   UNIQUE KEY `ChannelName_UNIQUE` (`ChannelName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,12 +45,13 @@ DROP TABLE IF EXISTS `CommentList`;
 CREATE TABLE `CommentList` (
   `CommentID` int unsigned NOT NULL AUTO_INCREMENT,
   `VideoName` varchar(100) NOT NULL,
+  `ChannelName` varchar(100) NOT NULL,
   `UserName` varchar(100) NOT NULL,
   `Comment` varchar(600) NOT NULL,
   `CommentCreationTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`CommentID`),
   UNIQUE KEY `CommentID_UNIQUE` (`CommentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +68,7 @@ CREATE TABLE `LikesDislikesList` (
   `Status` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`LikesDislikesListID`),
   UNIQUE KEY `LikesDislikesListID_UNIQUE` (`LikesDislikesListID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +89,7 @@ CREATE TABLE `LoginCredentials` (
   PRIMARY KEY (`UserName`),
   UNIQUE KEY `UserName_UNIQUE` (`UserName`),
   UNIQUE KEY `UserID_UNIQUE` (`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +106,7 @@ CREATE TABLE `NotificationsList` (
   `VideoName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`NotificationID`),
   UNIQUE KEY `NotificationID_UNIQUE` (`NotificationID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +123,7 @@ CREATE TABLE `SubscriberList` (
   `SubscribeTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`SubscriberID`),
   UNIQUE KEY `SuscriberID_UNIQUE` (`SubscriberID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +148,7 @@ CREATE TABLE `VideoList` (
   `VideoTag` varchar(100) NOT NULL,
   PRIMARY KEY (`VideoName`),
   UNIQUE KEY `VideoName_UNIQUE` (`VideoName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +166,7 @@ CREATE TABLE `WatchHistory` (
   `WatchTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`WatchID`),
   UNIQUE KEY `WatchID_UNIQUE` (`WatchID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,7 +184,7 @@ CREATE TABLE `WatchLaterList` (
   `WatchLaterTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`WatchLaterID`),
   UNIQUE KEY `WatchLaterID_UNIQUE` (`WatchLaterID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

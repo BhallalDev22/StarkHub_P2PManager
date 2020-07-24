@@ -13,7 +13,7 @@ public class WatchHistory {
         PojoToClient ptc = new PojoToClient();
         ResultSet rs = null;
 
-        String qu = "SELECT VideoName, ChannelName, WatchTime FROM WatchHistory WHERE UserName = '" + UserName + "';";
+        String qu = "SELECT VideoName, ChannelName, WatchTime FROM WatchHistory WHERE UserName = '" + UserName + "' ORDER BY WatchTime DESC;";
 
         try {
             rs = db.execQuery(qu);
